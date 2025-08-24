@@ -64,7 +64,7 @@ lifetime.ApplicationStopped.Register(() =>
 {
     AppLogger.Instance.Information("Application has stopped.");
     AppLogger.Instance.CloseAndFlush(); // flush and close logs cleanly
-    FileEncryptionService myFileEncryptionService = new FileEncryptionService(inputFileName, encryptedFileName, decryptedFileName, encryptionAndDecryptionDirectory);
+    FileEncryptionService myFileEncryptionService = new FileEncryptionService(inputFileName, encryptedFileName, decryptedFileName, encryptionAndDecryptionDirectory+"/");
     myFileEncryptionService.PerformAesEncryption();
     myFileEncryptionService.PerformAesDecryption();
 });
